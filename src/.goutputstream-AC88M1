@@ -1,0 +1,70 @@
+
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import React,{useState, useEffect, useReducer} from 'react';
+import './index.css'
+// import About from './components/About'
+// import Home from './components/Home'
+// import Products from './components/Product'
+// import Error from './components/Error';
+// import SharedLayout from './components/sharedLayout';
+
+// function App() {
+//   return (
+//       <BrowserRouter>
+     
+//       <Routes>
+//         <Route path='/' element={<SharedLayout />} >
+//           <Route index element={<Home />} />
+//           <Route path='about' element={<About />} />
+//           <Route path='products' element={<Products /> } />
+//           <Route path='*' element={<Error />} />
+//           </Route>
+//       </Routes> 
+
+//       </BrowserRouter>
+     
+//     );
+// }
+
+
+
+function App()
+{   
+  const [count,setCount] =React.useState(0)
+  const [timeleft, setTimeLeft]= React.useState(10)
+  const id = React.useRef(null)
+  const clear = ()=> window.clearInterval(id.current)
+
+  useEffect( ()=>{
+    id.current =window.setInterval ( ()=>{
+      setTimeLeft((time)=>time-1)
+    },1000)
+
+
+    return clear
+  },[])
+     
+  useEffect( ()=>{
+     if(timeleft === 0)
+     {
+       clear()
+
+     }
+  },[timeleft])
+
+     return(
+           <div>
+               <h2>{count}</h2>
+               <h2>Time left: {timeleft}</h2>
+               {timeleft === 0? null:
+               <button onClick={()=> setCount( (c)=> c+1)}>
+                 +
+                </button>}
+           </div>
+     )
+}
+
+export default App;
+
+
+
