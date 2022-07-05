@@ -8,7 +8,9 @@ const Library =({songs})=>{
         <div className="library">
             <h2>Library</h2>
             <div className="library-songs">
-                <LibrarySongs />
+                {songs.map( song =>
+                    <LibrarySongs song={song } />
+                    )}
 
             </div>
         </div>

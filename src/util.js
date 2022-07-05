@@ -35,6 +35,28 @@ function chillhop()
             active: false,
             color: [ '#BA4A46', '#FDF0DD'],
             audio: 'https://mp3.chillhop.com/serve.php/?mp3=9364'
+        },
+        {
+            name: 'LuvnYou',
+            artist:'Chillhop Music',
+            cover: 'https://chillhop.com/wp-content/uploads/2021/07/875b9624506ae8d05750b9e4ab4579abb1fe3e16-1024x1024.jpg',
+            id: uuidv4(),
+            active: false,
+            color: [ '#BA4A46', '#FDF0DD'],
+            audio: 'https://mp3.chillhop.com/serve.php/?mp3=21784'
+        },
+
+        {
+            name: 'Be Here Now',
+            artist: 'Chillhop Music',
+            cover: 'https://chillhop.com/wp-content/uploads/2021/07/875b9624506ae8d05750b9e4ab4579abb1fe3e16-1024x1024.jpg',
+            id: uuidv4(),
+            active: false,
+            color: [ '#BA4A46', '#FDF0DD'],
+            audio: 'https://mp3.chillhop.com/serve.php/?mp3=21782'
+        },
+        {
+            
         }
     ]
 }
