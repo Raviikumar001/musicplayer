@@ -7,7 +7,7 @@ import Player from './components/player';
 import Songs from './components/songs';
 
 import Library from './components/library';
-import data from './util';
+import data from './data';
 import Nav from './components/Nav';
 
 function App()
@@ -38,6 +38,9 @@ const timeUpdateHandler = (e)=>{
           <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
           <Songs  currentSong={currentSong} />
           <Player 
+          setSongs={setSongs}
+          songs={songs}
+          setCurrentSong={setCurrentSong}
           audioRef={audioRef}
           setSongInfo={setSongInfo}
            setIsPlaying={setIsPlaying}

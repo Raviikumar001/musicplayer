@@ -1,5 +1,6 @@
 import { isValidInputTimeValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
+import { playAudio } from "../util";
 
 const LibrarySongs = ({song, songs, setCurrentSong, id,audioRef, isPlaying, setSongs})=>{
 
@@ -24,15 +25,17 @@ const LibrarySongs = ({song, songs, setCurrentSong, id,audioRef, isPlaying, setS
     setSongs(newSongs)
     // audioRef.current.play();
 
-    if(isPlaying)
-    {
-       const playPromise = audioRef.current.play();
-       if(playPromise != undefined){
-        playPromise.then( (audio) =>{
-          audioRef.current.play();
-        })
-       }
-    }
+    // if(isPlaying)
+    // {
+    //    const playPromise = audioRef.current.play();
+    //    if(playPromise != undefined){
+    //     playPromise.then( (audio) =>{
+    //       audioRef.current.play();
+    //     })
+    //    }
+    // }
+
+    playAudio(isPlaying, audioRef)
   }
 
     return (
