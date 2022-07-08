@@ -1,12 +1,12 @@
 import { isValidInputTimeValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
-import { playAudio } from "../util";
+// import { playAudio } from "../util";
 
 const LibrarySongs = ({song, songs, setCurrentSong, id,audioRef, isPlaying, setSongs})=>{
 
-  const songSelectHandler = ()=>{
+  const songSelectHandler = async()=>{
     const selectedSong = songs.filter(  (state) => state.id === id)
-    setCurrentSong(selectedSong[0])
+   await setCurrentSong(selectedSong[0])
     
     const newSongs = songs.map( (song) => {
       if(song .id === id){
@@ -35,7 +35,8 @@ const LibrarySongs = ({song, songs, setCurrentSong, id,audioRef, isPlaying, setS
     //    }
     // }
 
-    playAudio(isPlaying, audioRef)
+    // playAudio(isPlaying, audioRef)
+    if(isPlaying) audioRef.current.play()
   }
 
     return (
