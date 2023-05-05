@@ -1,5 +1,5 @@
 import React from "react";
-
+//song component
 const Songs = ({currentSong})=>{
 
     return (
